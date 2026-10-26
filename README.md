@@ -1,5 +1,9 @@
 # Prometheus and Grafana Monitoring Project
 
+Project page: cd ~/prometheus-grafana-project
+{ head -n 1 README.md; printf '\nProject page: %s\n' "$(pbpaste)"; tail -n +2 README.md; } > /tmp/README.new && mv /tmp/README.new README.md
+head -n 5 README.md
+
 A complete monitoring stack for a small web server. Prometheus collects metrics, Grafana visualizes them, and Alertmanager sends notifications to Discord.
 
 The monitored server runs a Node.js app behind Nginx on Ubuntu 24.04 (ARM64). It runs in a Multipass VM on a MacBook, and the same steps work on any cloud VM.
