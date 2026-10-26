@@ -1,14 +1,6 @@
 # Prometheus and Grafana Monitoring Project
 
-Project page: cd ~/prometheus-grafana-project
-sed -i '' '/^Project page:/d' README.md
-{ head -n 1 README.md; printf '\nProject page: %s\n' "$(pbpaste)"; tail -n +2 README.md; } > /tmp/README.new && mv /tmp/README.new README.md
-head -n 5 README.md
-
-
-
-{ head -n 1 README.md; printf '\nProject page: %s\n' "$(pbpaste)"; tail -n +2 README.md; } > /tmp/README.new && mv /tmp/README.new README.md
-head -n 5 README.md
+Project page: https://roadmap.sh/projects/monitoring
 
 A complete monitoring stack for a small web server. Prometheus collects metrics, Grafana visualizes them, and Alertmanager sends notifications to Discord.
 
