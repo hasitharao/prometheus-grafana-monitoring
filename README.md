@@ -1,6 +1,8 @@
 # Prometheus and Grafana Monitoring Project
 
-Project page: cd ~/prometheus-grafana-project
+Project page: https://roadmap.sh/projects/monitoring
+
+
 { head -n 1 README.md; printf '\nProject page: %s\n' "$(pbpaste)"; tail -n +2 README.md; } > /tmp/README.new && mv /tmp/README.new README.md
 head -n 5 README.md
 
