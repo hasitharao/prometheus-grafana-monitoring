@@ -1,0 +1,4 @@
+[
+  { "targets": ["localhost:9090"], "labels": { "env": "dev", "role": "monitoring" } },
+  { "targets": ["localhost:9093"], "labels": { "env": "dev", "role": "alerting" } }
+]

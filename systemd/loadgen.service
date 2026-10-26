@@ -1,0 +1,10 @@
+[Unit]
+Description=Demo traffic generator
+After=nginx.service myapp.service
+
+[Service]
+ExecStart=/usr/local/bin/loadgen.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

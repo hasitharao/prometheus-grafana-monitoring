@@ -1,0 +1,15 @@
+groups:
+  - name: recording
+    interval: 30s
+    rules:
+      - record: instance:node_cpu_utilisation:percent
+        expr: 100 - (avg by (instance) (rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100)
+
+      - record: route:myapp_http_requests:rate5m
+        expr: sum by (route) (rate(myapp_http_requests_total[5m]))
+
+      - record: route:myapp_http_request_duration_seconds:p95_5m
+        expr: histogram_quantile(0.95, sum by (le, route) (rate(myapp_http_request_duration_seconds_bucket[5m])))
+
+      - record: job:myapp_http_error_ratio:rate5m
+        expr: sum(rate(myapp_http_requests_total{status=~"5.."}[5m])) / sum(rate(myapp_http_requests_total[5m]))

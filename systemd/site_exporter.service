@@ -1,0 +1,11 @@
+[Unit]
+Description=Site probe exporter
+After=network-online.target nginx.service
+
+[Service]
+User=site_exporter
+ExecStart=/usr/bin/python3 /opt/site-exporter/exporter.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
